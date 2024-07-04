@@ -1,0 +1,36 @@
+:root {
+    box-sizing: border-box;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 500px;
+    border: 1px solid red;
+
+}
+
+.basic-title {
+    font-size: 1.5rem;
+    padding: .5em;
+}
+.label-wrapper {
+    width: 83%;
+}
+
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+input {
+    width: 80%;
+    padding: .5em;
+    margin: .8em 0;
+    border: 2px solid black;
+    border-radius: 10px;
+}
