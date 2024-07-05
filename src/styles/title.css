@@ -7,24 +7,25 @@
 }
 
 .container {
-    max-width: 500px;
-    border: 1px solid red;
-
+    width: 50%;
 }
-
 .basic-title {
     font-size: 1.5rem;
     padding: .5em;
+    font-weight: bold;
 }
 .label-wrapper {
     width: 83%;
 }
 
+.label-text {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
 .input-wrapper {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    
+    align-items: center; 
 }
 
 input {
@@ -33,4 +34,10 @@ input {
     margin: .8em 0;
     border: 2px solid black;
     border-radius: 10px;
+    font-size: 1rem;
+}
+
+input:focus {
+    outline-style: none;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.94);
 }
