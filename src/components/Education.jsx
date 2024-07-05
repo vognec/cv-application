@@ -4,7 +4,6 @@ function Education( {eduData, setEduData}){
 
     const handleChange = (e) => {
         const {name, value} = e.target;
-        console.log({name, value})
         setEduData((prevEduData) => ({
             ...prevEduData,
             [name]: value,

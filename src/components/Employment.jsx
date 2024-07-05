@@ -1,37 +1,82 @@
-function Employment(){
-    <div>
-        <p>Education</p>
-        <form>
-            <div>
-                <label htmlFor="school_name">School Name</label>
-                <input 
-                    type="text" 
-                    name="school_name"
-                    id="school_name"
-                    placeholder="ex: UT Austin"
-                />
-            </div>
-            <div>
-                <label htmlFor="degree">Degree</label>
-                <input 
-                    type="text" 
-                    name="degree" 
-                    id="degree" 
-                    placeholder="ex: Computer Science"
-                />
-            </div>
-            <div>
-                <label htmlFor="date">Date Attended</label>
-                <input 
-                    type="text" 
-                    name="date" 
-                    id="date"
-                    placeholder="mm/dd/yyyy" 
-                />
-            </div>
-        </form>
-    </div>
+import '../styles/info.css'
 
+function Employment({jobData, setJobData}){
+
+    const handleChange = (e) => {
+        const {name, value} = e.target;
+        setJobData((prevJobData) => ({
+            ...prevJobData,
+            [name]: value,
+        }))
+    }
+
+    return (
+        <>
+        <button className='collapsible'>Add employment</button>
+        <div className="container content">
+            <div>
+                <p className="section-title">Experience</p>
+                <form>
+                    <div className="input-wrapper">
+                        <div className="label-wrapper"><label className="label-text" htmlFor="company">Company Name</label></div>
+                        <input
+                            type="text"
+                            name="company_name"
+                            id="company_name"
+                            placeholder="ex: HEB"
+                            value={jobData.company_name}
+                            onChange={handleChange}
+                        />
+                    </div>
+                    <div className="input-wrapper">
+                        <div className="label-wrapper"><label className="label-text" htmlFor="position">Position</label></div>
+                        <input
+                            type="text"
+                            name="position"
+                            id="position"
+                            placeholder="ex: Software Engineer"
+                            value={jobData.position}
+                            onChange={handleChange}
+                        />
+                    </div>
+                    <div className="input-wrapper">
+                        <div className="label-wrapper"><label className="label-text" htmlFor="responsibilities">Responsibilities</label></div>
+                        <input
+                            type="text"
+                            name="responsibilities"
+                            id="responsibilities"
+                            placeholder="job description"
+                            value={jobData.responsibilities}
+                            onChange={handleChange}
+                        />
+                    </div>
+                    <div className="input-wrapper">
+                        <div className="label-wrapper"><label className="label-text" htmlFor="start_date">Start Date</label></div>
+                        <input
+                            type="text"
+                            name="start_date"
+                            id="start_date"
+                            placeholder="mm/dd/yyyy"
+                            value={jobData.start_date}
+                            onChange={handleChange}
+                        />
+                    </div>
+                    <div className="input-wrapper">
+                        <div className="label-wrapper"><label className="label-text" htmlFor="end_date">End Date</label></div>
+                        <input
+                            type="text"
+                            name="end_date"
+                            id="end_date"
+                            placeholder="mm/dd/yyyy"
+                            value={jobData.end_date}
+                            onChange={handleChange}
+                        />
+                    </div>
+                </form>
+            </div>
+        </div>
+        </>
+    )
 }
 
 export default Employment

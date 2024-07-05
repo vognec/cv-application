@@ -1,17 +1,26 @@
 import '../styles/cvForm.css'
 
-function CvForm({titleData, eduData}) {
+function CvForm({titleData, eduData, jobData}) {
     return (
         <div>
             <div>
-                <h1>{titleData.name}</h1>
-                <h1>{titleData.email}</h1>
-                <h1>{titleData.phone}</h1>
+                <p>{titleData.name}</p>
+                <p>{titleData.email}</p>
+                <p>{titleData.phone}</p>
             </div>
+            <hr />
             <div>
-                <h1>{eduData.s_name}</h1>
-                <h1>{eduData.degree}</h1>
-                <h1>{eduData.date}</h1>
+                <p>{eduData.s_name}</p>
+                <p>{eduData.degree}</p>
+                <p>{eduData.date}</p>
+            </div>
+            <hr />
+            <div>
+                <p>{jobData.company_name}</p>
+                <p>{jobData.position}</p>
+                <p>{jobData.responsibilities}</p>
+                <p>{jobData.start_date}</p>
+                <p>{jobData.end_date}</p>
             </div>
         </div>
     )
