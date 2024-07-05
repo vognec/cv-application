@@ -1,4 +1,4 @@
-import '../styles/title.css'
+import '../styles/info.css'
 
 function Tittle( {titleData, setTitleData}){
 
@@ -18,7 +18,7 @@ function Tittle( {titleData, setTitleData}){
     return (
       <div className='container'>
         <div>
-          <p className='basic-title'>Basic Information</p>
+          <p className='section-title'>Basic Information</p>
           <form >
             <div className='input-wrapper'>
               <div className='label-wrapper'><label className='label-text' htmlFor="name">Name</label></div>
