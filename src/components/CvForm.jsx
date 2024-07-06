@@ -8,13 +8,13 @@ function CvForm({titleData, eduData, jobData}) {
                 <p>{titleData.email}</p>
                 <p>{titleData.phone}</p>
             </div>
-            <hr />
+       
             <div>
                 <p>{eduData.s_name}</p>
                 <p>{eduData.degree}</p>
                 <p>{eduData.date}</p>
             </div>
-            <hr />
+           
             <div>
                 <p>{jobData.company_name}</p>
                 <p>{jobData.position}</p>

@@ -9,48 +9,49 @@ function Education( {eduData, setEduData}){
             [name]: value,
         }));
     };
-    return (
-        <div className='container'>
-            <div>
-                <p className='section-title'>Education</p>
-                <form>
-                    <div className='input-wrapper'>
-                        <div className='label-wrapper'><label className='label-text' htmlFor="s_name">School Name</label></div>
-                        <input
-                            type="text"
-                            name="s_name"
-                            id="s_name"
-                            placeholder="ex: UT Austin"
-                            value={eduData.s_name}
-                            onChange={handleChange}
-                        />
-                    </div>
-                    <div className='input-wrapper'>
-                        <div className='label-wrapper'><label className='label-text' htmlFor="degree">Degree</label></div>
-                        <input
-                            type="text"
-                            name="degree"
-                            id="degree"
-                            placeholder="ex: Computer Science"
-                            value={eduData.degree}
-                            onChange={handleChange}
-                        />
-                    </div>
-                    <div className='input-wrapper'>
-                        <div className='label-wrapper'><label className='label-text' htmlFor="date">Date Attended</label></div>
-                        <input
-                            type="text"
-                            name="date"
-                            id="date"
-                            placeholder="mm/dd/yyyy"
-                            value={eduData.date}
-                            onChange={handleChange}
-                        />
-                    </div>
-                </form>
-            </div>
-        </div>
-    )
+    return (  
+        <ul className='accordion'>
+                <li>
+                    <input type="radio" name='accordion' id='edu_content'/>
+                    <label htmlFor="edu_content">Education</label>
+                    <form className='content'>
+                        <div>
+                           <label htmlFor="s_name">School Name</label>
+                            <input
+                                type="text"
+                                name="s_name"
+                                id="s_name"
+                                placeholder="ex: UT Austin"
+                                value={eduData.s_name}
+                                onChange={handleChange}
+                            />
+                        </div>
+                        <div>
+                           <label htmlFor="degree">Degree</label>
+                            <input
+                                type="text"
+                                name="degree"
+                                id="degree"
+                                placeholder="ex: Computer Science"
+                                value={eduData.degree}
+                                onChange={handleChange}
+                            />
+                        </div>
+                        <div>
+                           <label htmlFor="date">Date Attended</label>
+                            <input
+                                type="text"
+                                name="date"
+                                id="date"
+                                placeholder="mm/dd/yyyy"
+                                value={eduData.date}
+                                onChange={handleChange}
+                            />
+                        </div>
+                    </form>
+                </li>
+        </ul>
+)
 
 }
 

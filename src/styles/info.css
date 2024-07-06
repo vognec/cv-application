@@ -4,8 +4,10 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: 'Poppins', sans-serif;
 }
 
+/* 
 .container {
     width: 50%;
 }
@@ -26,54 +28,73 @@
     display: flex;
     flex-direction: column;
     align-items: center; 
-}
+} */
 
-input {
+/* input {
     width: 80%;
     padding: .5em;
     margin: .8em 0;
     border: 2px solid black;
     border-radius: 10px;
     font-size: 1rem;
-}
+} */
 
 input:focus {
     outline-style: none;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.94);
 }
 
-.collapsible {
-    background-color: #777;
-    color: white;
-    cursor: pointer;
-    padding: 18px;
+.accordion {
+    width: 600px;
+}
+
+.accordion li {
+    list-style: none;
     width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 1rem;
+    margin: 1.25em;
+    padding: .625em;
+    border-radius: 8px;
+    /* border: 1px solid black; */
+    background: #E3EDF7;
+    box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+                -6px -6px 10 -1px rgba(255, 255, 255, 0.15);
 }
 
-.active, .collapsible:hover {
-    background-color: #555;
+.accordion > li > label:first-of-type {
+    display: flex;
+    align-items: center;
+    padding: .625em;
+    font-size: 1.15rem;
+    font-weight: 500;
+    cursor: pointer;
 }
 
-.collapsible:after {
-    content: '\002B';
-    columns: white;
-    font-weight: bold;
-    float: right;
-    margin-left: 5px;
+.accordion > li > label:first-of-type::before {
+    content: '+';
+    margin-right: .625em;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+input[type="radio"]{
+    display: none;
 }
 
-.active:after {
-    content: "\2212"
-}
-
-.content {
-    padding: 0 18px;
+.accordion .content {
+    color: #555;
+    padding: 0 .625em;
+    line-height: 1.625em; 
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.2s ease-out;
-    background-color: #f1f1f1;
+    transition: max-height 0.5s, padding 0.5s;
+}
+
+.accordion input[type="radio"]:checked  + label + .content {
+    max-height: 400px;
+    padding: .625em .625em 1.25em;
+}
+.accordion input[type="radio"]:checked  + label::before {
+    content: '-';
+    margin-right: .625em;
+    font-size: 1.5rem;
+    font-weight: 600;
 }

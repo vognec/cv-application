@@ -14,7 +14,7 @@ function App() {
 return (
   <div className='container'>
     <div>
-      <Title setTitleData={setTitleData} titleData={titleData} />
+      <Title setTitleData={setTitleData} titleData={titleData}/>
       <Education setEduData={setEduData} eduData={eduData}/>  
       <Employment setJobData={setJobData} jobData={jobData} />
     </div>

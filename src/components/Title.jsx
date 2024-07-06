@@ -1,4 +1,5 @@
 import '../styles/info.css'
+import { useState } from 'react';
 
 function Tittle( {titleData, setTitleData}){
 
@@ -15,48 +16,56 @@ function Tittle( {titleData, setTitleData}){
       }));
     };
 
+   
     return (
-      <div className='container'>
-        <div>
-          <p className='section-title'>Basic Information</p>
-          <form >
-            <div className='input-wrapper'>
-              <div className='label-wrapper'><label className='label-text' htmlFor="name">Name</label></div>
-              <input
-                type="name"
-                name="name"
-                id="name"
-                placeholder="Enter full name"
-                value={titleData.name}
-                onChange={handleChange}
-              />
-            </div>
-            <div className='input-wrapper'>
-              <div className="label-wrapper"><label className='label-text' htmlFor="email">Email</label></div>
-              <input
-                type="text"
-                name="email"
-                id="email"
-                placeholder="Enter email"
-                value={titleData.email}
-                onChange={handleChange}
-              />
-            </div>
-            <div className='input-wrapper'>
-              <div className="label-wrapper"><label className='label-text' htmlFor="phone">Phone</label></div>
-              <input
-                type="text"
-                name="phone"
-                id="phone"
-                placeholder="Enter phone number"
-                value={titleData.phone}
-                onChange={handleChange}
-              />
-            </div>
-          </form>
-        </div>
-      </div>
-    )
+
+      <ul className="accordion">
+          <li>
+            <input 
+              type="radio" 
+              name='accordion' 
+              id='basic_content'
+              defaultChecked
+            />
+            <label htmlFor="basic_content">Basic Information</label>
+            <form className='content'>
+              <div>
+                <label htmlFor="name">Name</label>
+                <input
+                  type="name"
+                  name="name"
+                  id="name"
+                  placeholder="Enter full name"
+                  value={titleData.name}
+                  onChange={handleChange}
+                />
+              </div>
+              <div>
+                <label htmlFor="email">Email</label>
+                <input
+                  type="text"
+                  name="email"
+                  id="email"
+                  placeholder="Enter email"
+                  value={titleData.email}
+                  onChange={handleChange}
+                />
+              </div>
+              <div>
+                <label htmlFor="phone">Phone</label>
+                <input
+                  type="text"
+                  name="phone"
+                  id="phone"
+                  placeholder="Enter phone number"
+                  value={titleData.phone}
+                  onChange={handleChange}
+                />
+              </div>
+            </form>
+          </li>
+      </ul>
+  )
 }
 
 export default Tittle

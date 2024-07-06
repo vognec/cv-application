@@ -1,4 +1,4 @@
-.container {
+/* .container {
     display: grid;
     grid-template-rows: 500px;
     grid-template-columns: 500px 500px;
@@ -8,4 +8,8 @@
 
 .container > div {
  border: 1px solid blue;
+} */
+
+body {
+    background: #E3EDF7;
 }

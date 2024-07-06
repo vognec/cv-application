@@ -11,71 +11,71 @@ function Employment({jobData, setJobData}){
     }
 
     return (
-        <>
-        <button className='collapsible'>Add employment</button>
-        <div className="container content">
-            <div>
-                <p className="section-title">Experience</p>
-                <form>
-                    <div className="input-wrapper">
-                        <div className="label-wrapper"><label className="label-text" htmlFor="company">Company Name</label></div>
-                        <input
-                            type="text"
-                            name="company_name"
-                            id="company_name"
-                            placeholder="ex: HEB"
-                            value={jobData.company_name}
-                            onChange={handleChange}
-                        />
-                    </div>
-                    <div className="input-wrapper">
-                        <div className="label-wrapper"><label className="label-text" htmlFor="position">Position</label></div>
-                        <input
-                            type="text"
-                            name="position"
-                            id="position"
-                            placeholder="ex: Software Engineer"
-                            value={jobData.position}
-                            onChange={handleChange}
-                        />
-                    </div>
-                    <div className="input-wrapper">
-                        <div className="label-wrapper"><label className="label-text" htmlFor="responsibilities">Responsibilities</label></div>
-                        <input
-                            type="text"
-                            name="responsibilities"
-                            id="responsibilities"
-                            placeholder="job description"
-                            value={jobData.responsibilities}
-                            onChange={handleChange}
-                        />
-                    </div>
-                    <div className="input-wrapper">
-                        <div className="label-wrapper"><label className="label-text" htmlFor="start_date">Start Date</label></div>
-                        <input
-                            type="text"
-                            name="start_date"
-                            id="start_date"
-                            placeholder="mm/dd/yyyy"
-                            value={jobData.start_date}
-                            onChange={handleChange}
-                        />
-                    </div>
-                    <div className="input-wrapper">
-                        <div className="label-wrapper"><label className="label-text" htmlFor="end_date">End Date</label></div>
-                        <input
-                            type="text"
-                            name="end_date"
-                            id="end_date"
-                            placeholder="mm/dd/yyyy"
-                            value={jobData.end_date}
-                            onChange={handleChange}
-                        />
-                    </div>
-                </form>
-            </div>
-        </div>
-        </>
+    
+
+            <ul className='accordion'>
+                <li>
+                    <input type="radio" name='accordion' id='exp_content'/>
+                    <label htmlFor="exp_content">Experience</label>
+                    <form className='content'>
+                        <div>
+                            <label htmlFor="company">Company Name</label>
+                            <input
+                                type="text"
+                                name="company_name"
+                                id="company_name"
+                                placeholder="ex: HEB"
+                                value={jobData.company_name}
+                                onChange={handleChange}
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor="position">Position</label>
+                            <input
+                                type="text"
+                                name="position"
+                                id="position"
+                                placeholder="ex: Software Engineer"
+                                value={jobData.position}
+                                onChange={handleChange}
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor="responsibilities">Responsibilities</label>
+                            <input
+                                type="text"
+                                name="responsibilities"
+                                id="responsibilities"
+                                placeholder="job description"
+                                value={jobData.responsibilities}
+                                onChange={handleChange}
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor="start_date">Start Date</label>
+                            <input
+                                type="text"
+                                name="start_date"
+                                id="start_date"
+                                placeholder="mm/dd/yyyy"
+                                value={jobData.start_date}
+                                onChange={handleChange}
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor="end_date">End Date</label>
+                            <input
+                                type="text"
+                                name="end_date"
+                                id="end_date"
+                                placeholder="mm/dd/yyyy"
+                                value={jobData.end_date}
+                                onChange={handleChange}
+                            />
+                        </div>
+                    </form>
+                </li>
+            </ul>
     )
 }
 
