@@ -13,17 +13,17 @@ function App() {
 
 return (
   <div className='container'>
-    <div>
+    <div className='input-wrapper'>
       <Title setTitleData={setTitleData} titleData={titleData}/>
-      <Education setEduData={setEduData} eduData={eduData}/>  
       <Employment setJobData={setJobData} jobData={jobData} />
+      <Education setEduData={setEduData} eduData={eduData}/>  
     </div>
     
-    <div>
+    <div className='cv-wrapper'>
       <CvForm 
         titleData={titleData}
-        eduData={eduData}
         jobData={jobData}
+        eduData={eduData}
       />
     </div>
   </div>
