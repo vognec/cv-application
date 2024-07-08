@@ -1,5 +1,4 @@
 import '../styles/info.css'
-import { useState } from 'react';
 
 function Tittle( {titleData, setTitleData}){
 
@@ -18,53 +17,63 @@ function Tittle( {titleData, setTitleData}){
 
    
     return (
-
-      <ul className="accordion">
-          <li>
-            <input 
-              type="radio" 
-              name='accordion' 
-              id='basic_content'
-              defaultChecked
-            />
-            <label htmlFor="basic_content">Basic Information</label>
-            <form className='content'>
-              <div>
-                <label htmlFor="name">Name</label>
-                <input
-                  type="name"
-                  name="name"
-                  id="name"
-                  placeholder="Enter full name"
-                  value={titleData.name}
-                  onChange={handleChange}
-                />
-              </div>
-              <div>
-                <label htmlFor="email">Email</label>
-                <input
-                  type="text"
-                  name="email"
-                  id="email"
-                  placeholder="Enter email"
-                  value={titleData.email}
-                  onChange={handleChange}
-                />
-              </div>
-              <div>
-                <label htmlFor="phone">Phone</label>
-                <input
-                  type="text"
-                  name="phone"
-                  id="phone"
-                  placeholder="Enter phone number"
-                  value={titleData.phone}
-                  onChange={handleChange}
-                />
-              </div>
-            </form>
-          </li>
-      </ul>
+            <ul className="accordion">
+                <li>
+                  <input
+                    type="radio"
+                    name='accordion'
+                    id='basic_content'
+                    defaultChecked
+                  />
+                  <label className='input-boxes' htmlFor="basic_content">Basic Information</label>
+                  <form className='content'>
+                    <div>
+                      <label htmlFor="first_name">First Name</label>
+                      <input
+                        type="text"
+                        name="first_name"
+                        id="first_name"
+                        placeholder="John"
+                        value={titleData.first_name}
+                        onChange={handleChange}
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="last_name">Last Name</label>
+                      <input
+                        type="text"
+                        name="last_name"
+                        id="last_name"
+                        placeholder="Hopkins"
+                        value={titleData.last_name}
+                        onChange={handleChange}
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="email">Email</label>
+                      <input
+                        type="text"
+                        name="email"
+                        id="email"
+                        placeholder="Enter email"
+                        value={titleData.email}
+                        onChange={handleChange}
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="phone">Phone</label>
+                      <input
+                        type="text"
+                        name="phone"
+                        id="phone"
+                        placeholder="Enter phone number"
+                        value={titleData.phone}
+                        onChange={handleChange}
+                      />
+                    </div>
+                  </form>
+                </li>
+            </ul>
   )
 }
 

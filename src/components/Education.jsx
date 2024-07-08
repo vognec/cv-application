@@ -38,13 +38,24 @@ function Education( {eduData, setEduData}){
                             />
                         </div>
                         <div>
-                           <label htmlFor="date">Date Attended</label>
+                           <label htmlFor="start_date">Start Date</label>
                             <input
                                 type="text"
-                                name="date"
-                                id="date"
+                                name="start_date"
+                                id="start_date"
                                 placeholder="mm/dd/yyyy"
-                                value={eduData.date}
+                                value={eduData.start_date}
+                                onChange={handleChange}
+                            />
+                        </div>
+                        <div>
+                           <label htmlFor="end_date">end Date</label>
+                            <input
+                                type="text"
+                                name="end_date"
+                                id="end_date"
+                                placeholder="mm/dd/yyyy"
+                                value={eduData.end_date}
                                 onChange={handleChange}
                             />
                         </div>

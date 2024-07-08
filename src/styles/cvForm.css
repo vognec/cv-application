@@ -1,19 +1,87 @@
-.cv-header {
-    margin-top: 1em;
-    margin-left: 1em;
-    margin-right: 1em;
-    border: 1px solid black;
+
+.cv-container {
+    width: 70%;
+    height: 100%;
+    background-color: #EAE7DC;
+    color: #8E8D8A;
     display: flex;
-    justify-content: center;
-    gap: 2em;
+    
 }
 
-.cv-body {
-    margin: 3em 1em;
-    border: 1px solid black;
+.cv-contacts {
+    width: 35%; 
+    border-right: 5px solid #E98074;
+    box-sizing: border-box;
+    padding-top: 2em;
+    padding-left: 2em;
+    overflow-wrap: break-word;
 }
 
-.cv-footer {
-    margin: 0 1em;
-    border: 1px solid black;
+.cv-history {
+    width: 65%;
+    box-sizing: border-box;
+    padding-top: 1.3em;
+    padding-left: 1em;
 }
+
+.cv-contact-name {
+    font-size: 2em;
+    margin-bottom: 1em;
+    font-weight: 700;
+}
+
+.cv-contact-info {
+    font-size: 1.1em;
+    font-weight: 700;
+    margin-top: 1em;
+    line-height: 2;
+}
+.cv-contact-hr,
+.cv-history-hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #E98074;
+}
+.cv-contact-hr {
+    width: 80%;
+}
+.cv-history-hr {
+    width: 95%;
+}
+.cv-contact-header {
+    font-weight: 900;
+    font-size: 2em;
+}
+
+.cv-history-data{
+    overflow-wrap: break-word;
+    width: 95%;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.cv-work-name,
+.cv-edu-name{
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.cv-work-title,
+.cv-edu-name {
+    font-size: 1.3em;
+    font-weight: 700;
+}
+
+.cv-work-duty {
+    font-size: 1.1em;
+    font-weight: 500;
+    margin-top: .5em;
+    margin-bottom: .5em;
+}
+
+.cv-date {
+    text-align: end;
+}
+
+

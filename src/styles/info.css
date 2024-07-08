@@ -4,31 +4,36 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
 }
 
-
-
+.content div {
+    display: flex;
+    flex-direction: column;
+}
 input:focus {
     outline-style: none;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.94);
 }
 
 .accordion {
-    width: 200px;
+    width: 600px;
+    display: flex;
+    justify-content: center;
 }
 
 .accordion li {
     list-style: none;
-    width: 100%;
-    margin: 1.25em;
+    width: 60%;
+    margin-bottom: 1.25em;
     padding: .625em;
     border-radius: 8px;
     /* border: 1px solid black; */
-    background: #E3EDF7;
+    background-color: #EAE7DC;
+    color: #8E8D8A;
     box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
                 -6px -6px 10 -1px rgba(255, 255, 255, 0.15);
 }
+
 
 .accordion > li > label:first-of-type {
     display: flex;
@@ -68,3 +73,4 @@ input[type="radio"]{
     font-size: 1.5rem;
     font-weight: 600;
 }
+
