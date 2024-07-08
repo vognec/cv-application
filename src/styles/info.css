@@ -58,8 +58,8 @@ input[type="radio"]{
     color: #555;
     padding: 0 .625em;
     line-height: 1.625em; 
-    max-height: 0;
-    overflow: hidden;
+    /* max-height: 0;
+    overflow: hidden; */
     transition: max-height 0.5s, padding 0.5s;
 }
 

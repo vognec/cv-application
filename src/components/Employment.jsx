@@ -2,7 +2,17 @@ import { useState } from 'react';
 import '../styles/info.css'
 
 function Employment({jobData, setJobData}){
-    const [visible, setVisible] = useState(false);
+
+    const [showFormContent, setShowFormContent] = useState(false);
+    const [showAddJobButton, setShowAddJobButton] = useState(false);
+
+    const handleExperienceClick = (e) => {
+        setShowAddJobButton(true);
+    };
+
+    const handleAddJobClick = (e) => {
+        setShowFormContent(true);
+    };
 
     const handleChange = (e) => {
         const {name, value} = e.target;
@@ -12,15 +22,17 @@ function Employment({jobData, setJobData}){
         }))
     }
 
-    const onClick = () => {setVisible(true)}
-
     return (
             
                 <ul className='accordion'>
                     <li>
                         <input type="radio" name='accordion' id='exp_content'/>
-                        <label htmlFor="exp_content">Experience</label>
-                        <form className='content'>
+                        <label htmlFor="exp_content" onClick={handleExperienceClick}>Experience</label>
+                        {showAddJobButton &&
+                        (<button onClick={handleAddJobClick}>Add Job</button>)
+                        }
+                        {showFormContent && (
+                            <form className='content'>
                             <div>
                                 <label htmlFor="company">Company Name</label>
                                 <input
@@ -76,9 +88,13 @@ function Employment({jobData, setJobData}){
                                     onChange={handleChange}
                                 />
                             </div>
-                        </form>
+                            </form>
+                        )}
+                        
+ 
                     </li>
                 </ul>
+ 
     )
 }
 

@@ -1,7 +1,17 @@
+import { useState } from 'react';
 import '../styles/info.css'
 
 function Education( {eduData, setEduData}){
 
+    const [showFormContent, setShowFormContent] = useState(false);
+    const [showAddJobButton, setShowAddJobButton] = useState(false);
+
+    const handleEducationClick = () => {
+        setShowAddJobButton(true);
+    }
+    const handleButtonClick = () => {
+        setShowFormContent(true);
+    }
     const handleChange = (e) => {
         const {name, value} = e.target;
         setEduData((prevEduData) => ({
@@ -13,8 +23,12 @@ function Education( {eduData, setEduData}){
         <ul className='accordion'>
                 <li>
                     <input type="radio" name='accordion' id='edu_content'/>
-                    <label htmlFor="edu_content">Education</label>
-                    <form className='content'>
+                    <label htmlFor="edu_content" onClick={handleEducationClick}>Education</label>
+                    {showAddJobButton && (
+                        <button onClick={handleButtonClick}>Add School</button>
+                    )}
+                    {showFormContent && (
+                        <form className='content'>
                         <div>
                            <label htmlFor="s_name">School Name</label>
                             <input
@@ -60,6 +74,8 @@ function Education( {eduData, setEduData}){
                             />
                         </div>
                     </form>
+                    )}
+                    
                 </li>
         </ul>
 )

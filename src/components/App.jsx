@@ -15,7 +15,7 @@ return (
   <div className='container'>
     <div className='input-wrapper'>
       <Title setTitleData={setTitleData} titleData={titleData}/>
-      <Employment setJobData={setJobData} jobData={jobData} setAddJob={setAddJob} addJob={addJob}/>
+      <Employment setJobData={setJobData} jobData={jobData}/>
       <Education setEduData={setEduData} eduData={eduData}/>  
     </div>
     
