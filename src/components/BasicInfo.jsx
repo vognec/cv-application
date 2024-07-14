@@ -1,15 +1,13 @@
-function BasicInfo({ basicInfo, handleInputChange}) {
+function BasicInfo({ basicInfo, onChange}) {
   return (
     <div>
-      {basicInfo.map((item, index) => (
-        <div key={item.id}>
           <label>
             First Name:
             <input
               type="text"
               name="firstName"
-              value={item.firstName}
-              onChange={(event) => handleInputChange(index, event)}
+              value={basicInfo.firstName}
+              onChange={onChange}
             />
           </label>
           <label>
@@ -17,8 +15,8 @@ function BasicInfo({ basicInfo, handleInputChange}) {
             <input
               type="text"
               name="lastName"
-              value={item.lastName}
-              onChange={(event) => handleInputChange(index, event)}
+              value={basicInfo.lastName}
+              onChange={onChange}
             />
           </label>
           <label>
@@ -26,8 +24,8 @@ function BasicInfo({ basicInfo, handleInputChange}) {
             <input
               type="email"
               name="email"
-              value={item.email}
-              onChange={(event) => handleInputChange(index, event)}
+              value={basicInfo.email}
+              onChange={onChange}
             />
           </label>
           <label>
@@ -35,12 +33,10 @@ function BasicInfo({ basicInfo, handleInputChange}) {
             <input
               type="text"
               name="phone"
-              value={item.phone}
-              onChange={(event) => handleInputChange(index, event)}
+              value={basicInfo.phone}
+              onChange={onChange}
             />
-          </label>
-        </div>
-      ))}
+          </label> 
     </div>
   );
 };
