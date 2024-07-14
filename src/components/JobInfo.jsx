@@ -1,5 +1,17 @@
-function JobInfo({jobInfo, onChange}) {
+import {v4 as uuid} from 'uuid'
 
+function JobInfo({jobInfo, setJobInfo, onChange}) {
+
+    function handleAddJobClick()  {
+         const newJob = {jobName: '',
+            jobTitle: '',
+            jobDuties: '',
+            jobStartDate: '',
+            jobEndDate: '',
+            id: uuid()}
+        const updatedJobInfo = [...jobInfo, newJob];
+        setJobInfo(updatedJobInfo); 
+    }
     return (
         <div>
             
@@ -53,7 +65,7 @@ function JobInfo({jobInfo, onChange}) {
                 </form>
             )
             )}
-            <button>Add Job</button>
+            <button onClick={handleAddJobClick}>Add Job</button>
         </div>
     )
     

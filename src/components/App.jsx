@@ -42,7 +42,7 @@ function App() {
     <div>
       <BasicInfo basicInfo={basicInfo} onChange={handleBasicInputChange} />
       <hr />
-      <JobInfo jobInfo={jobInfo} onChange={handleJobInputChange} />
+      <JobInfo jobInfo={jobInfo} setJobInfo={setJobInfo} onChange={handleJobInputChange} />
       <hr />
       <Cv basicInfo={basicInfo} jobInfo={jobInfo}/>
     </div>
