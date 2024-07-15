@@ -2,33 +2,39 @@ function Cv({basicInfo, jobInfo, eduInfo}) {
   return (
 
       
-        <div >
-          <p>First Name: {basicInfo.firstName}</p>
-          <p>Last Name: {basicInfo.lastName}</p>
-          <p>Email: {basicInfo.email}</p>
-          <p>Phone: {basicInfo.phone}</p>
-          <hr />
-          {jobInfo.map( item => (
-            <div key={item.id}>
-                <p>Job Name: {item.jobName}</p>
-                <p>Job Title: {item.jobTitle}</p>
-                <p>Job Duties: {item.jobDuties}</p>
-                <p>Job Start Date: {item.jobStartDate}</p>
-                <p>Job End Date: {item.jobEndDate}</p>
+        <div className="cv-container">
+          <div className="cv-left-container">
+            <p className="cv-name">{basicInfo.firstName} {basicInfo.lastName}</p>
+            <hr />
+            <div className="cv-contact">
+              <p className="cv-email">{basicInfo.email}</p>
+              <p className="cv-phone">{basicInfo.phone}</p>
             </div>
-            )
-          )}
-          <hr />
-          {eduInfo.map( item =>(
-            <div key={item.id}>
-                <p>School Name: {item.eduName}</p>
-                <p>Degree: {item.eduDegree}</p>
-                <p>GPA: {item.eduGPA}</p>
-                <p>Start Date: {item.eduStartDate}</p>
-                <p>End Date: {item.eduEndDate}</p>
+          </div>
+            
+            <div className="cv-right-container">
+              {jobInfo.map( item => (
+                <div key={item.id}>
+                    <p>{item.jobName}</p>
+                    <p>{item.jobTitle}</p>
+                    <p>{item.jobDuties}</p>
+                    <p>{item.jobStartDate}</p>
+                    <p>{item.jobEndDate}</p>
+                </div>
+                )
+              )}
+              {eduInfo.map( item =>(
+                <div key={item.id}>
+                    <p>{item.eduName}</p>
+                    <p>{item.eduDegree}</p>
+                    <p>{item.eduGPA}</p>
+                    <p>{item.eduStartDate}</p>
+                    <p>{item.eduEndDate}</p>
+                </div>
+              )
+              )}
             </div>
-          ) 
-          )}
+          
         </div>
 
   );

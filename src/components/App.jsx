@@ -3,7 +3,6 @@ import BasicInfo from './BasicInfo';
 import Cv from './Cv';
 import JobInfo from './JobInfo';
 import EduInfo from './EduInfo';
-import {v4 as uuid} from 'uuid'
 
 function App() {
   const [basicInfo, setBasicInfo] = useState(
@@ -14,26 +13,9 @@ function App() {
         phone: ''
     }
   );
-  const [jobInfo, setJobInfo] = useState([
-    {
-        jobName: '',
-        jobTitle: '',
-        jobDuties: '',
-        jobStartDate: '',
-        jobEndDate: '',
-        id: uuid()
-    }
-  ]);
-  const [eduInfo, setEduInfo] = useState([
-    {
-        eduName: '',
-        eduDegree: '',
-        eduGPA: '',
-        eduStartDate: '',
-        eduEndDate: '',
-        id: uuid()
-    }
-  ])
+  const [jobInfo, setJobInfo] = useState([]);
+  const [eduInfo, setEduInfo] = useState([]);
+
   const handleBasicInputChange = (e) => {
     const {name, value} = e.target;
     setBasicInfo( prevBasicInfo => ({
@@ -56,14 +38,15 @@ function App() {
   }
 
   return (
-    <div>
-      <BasicInfo basicInfo={basicInfo} onChange={handleBasicInputChange} />
-      <hr />
-      <JobInfo jobInfo={jobInfo} setJobInfo={setJobInfo} onChange={handleJobInputChange} />
-      <hr />
-      <EduInfo eduInfo={eduInfo} setEduInfo={setEduInfo} onChange={handleEduInputChange}/>
-      <hr/>
-      <Cv basicInfo={basicInfo} jobInfo={jobInfo} eduInfo={eduInfo}/>
+    <div className='app-container ibm-plex-mono-regular'>
+       <div className='app-input-container'>
+        <BasicInfo basicInfo={basicInfo} onChange={handleBasicInputChange} />
+        <JobInfo jobInfo={jobInfo} setJobInfo={setJobInfo} onChange={handleJobInputChange} />
+        <EduInfo eduInfo={eduInfo} setEduInfo={setEduInfo} onChange={handleEduInputChange}/>  
+      </div>      
+      <div className='app-cv-container'>
+        <Cv basicInfo={basicInfo} jobInfo={jobInfo} eduInfo={eduInfo}/>
+      </div>
     </div>
   );
 };
