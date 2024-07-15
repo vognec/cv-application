@@ -1,4 +1,4 @@
-function Cv({basicInfo, jobInfo}) {
+function Cv({basicInfo, jobInfo, eduInfo}) {
   return (
 
       
@@ -18,7 +18,17 @@ function Cv({basicInfo, jobInfo}) {
             </div>
             )
           )}
-          
+          <hr />
+          {eduInfo.map( item =>(
+            <div key={item.id}>
+                <p>School Name: {item.eduName}</p>
+                <p>Degree: {item.eduDegree}</p>
+                <p>GPA: {item.eduGPA}</p>
+                <p>Start Date: {item.eduStartDate}</p>
+                <p>End Date: {item.eduEndDate}</p>
+            </div>
+          ) 
+          )}
         </div>
 
   );
