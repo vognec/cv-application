@@ -178,3 +178,13 @@ h2 {
 .item-duties {
     font-size: .7rem;
 }
+
+.delete-btn {
+    all: unset;
+    padding: .5em;
+    background-color: grey;
+    border-radius: 5px;
+    font-size: .9rem;
+    color: black;
+    font-weight: bold;
+}

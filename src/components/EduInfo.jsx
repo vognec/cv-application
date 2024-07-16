@@ -5,6 +5,8 @@ function EduInfo( {eduInfo, setEduInfo, onChange} ) {
     const [isOpen, setIsOpen] = useState(false);
     const [isAddEduOpen, setIsAddEduOpen] = useState(false);
 
+    let eduInfoLength = eduInfo.length;
+
     const toggleAccordion = () => {
         setIsOpen(!isOpen);
         if (isAddEduOpen) {
@@ -23,6 +25,12 @@ function EduInfo( {eduInfo, setEduInfo, onChange} ) {
         const newEdu = [...eduInfo, edu];
         setEduInfo(newEdu);
         setIsAddEduOpen(true);
+    }
+
+    const handleDeleteEduClick = () => {
+        const copyEduInfo = [...eduInfo];
+        copyEduInfo.splice(-1);
+        setEduInfo(copyEduInfo);
     }
     return (
         <div className='accordion'>
@@ -93,6 +101,11 @@ function EduInfo( {eduInfo, setEduInfo, onChange} ) {
                             </input>
                         </div>
                     ))}
+                    {eduInfoLength > 0 && <div className='accordion-btn-wrapper'>
+                    <button className='delete-btn' onClick={handleDeleteEduClick}>
+                        Delete Job
+                    </button>
+                </div>}
                 </div>
             </div>
         </div>

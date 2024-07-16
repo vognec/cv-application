@@ -6,6 +6,8 @@ function JobInfo({jobInfo, setJobInfo, onChange}) {
     const [isOpen, setIsOpen] = useState(false);
     const [isAddJobOpen, setAddJobOpen] = useState(false);
 
+    let jobInfoLength = jobInfo.length;
+
     const toggleAccordion = () => {
         setIsOpen(!isOpen);
         if (isAddJobOpen) {
@@ -23,6 +25,12 @@ function JobInfo({jobInfo, setJobInfo, onChange}) {
         const updatedJobInfo = [...jobInfo, newJob];
         setJobInfo(updatedJobInfo);
         setAddJobOpen(true); 
+    }
+
+    function handleDeleteJobClick() {
+        const copyJobs = [...jobInfo];
+        copyJobs.splice(-1);
+        setJobInfo(copyJobs);
     }
     return (
         <div className='accordion'>
@@ -92,8 +100,12 @@ function JobInfo({jobInfo, setJobInfo, onChange}) {
                                 >
                         </input>
                     </form>
-                )
+              
+            )
                 )}
+                {jobInfoLength > 0 && <div className='accordion-btn-wrapper'>
+                    <button className='delete-btn' onClick={handleDeleteJobClick}>Delete Job</button>
+                </div>}
             </div>
             </div>
         </div>
