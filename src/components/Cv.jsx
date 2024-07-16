@@ -20,7 +20,7 @@ function Cv({basicInfo, jobInfo, eduInfo}) {
                     <div className="display-wrapper">
                       <p className="item-name">{item.jobName}</p>
                       <p className="item-title">{item.jobTitle}</p>
-                      <p>{item.jobDuties}</p>
+                      <p className="item-duties">{item.jobDuties}</p>
                       <p className="item-date">{item.jobStartDate} - {item.jobEndDate}</p>
                     </div>
                 </div>

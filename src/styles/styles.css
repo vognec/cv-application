@@ -119,6 +119,8 @@ h2 {
     max-height: 70vh;
     background-color: grey;
     display: flex;
+    text-wrap: wrap;
+    overflow: hidden;
 }
 
 .cv-left-container {
@@ -129,6 +131,8 @@ h2 {
 
 .cv-right-container {
     width: 60%;
+    padding-top: .5em;
+    padding-bottom: .5em;
 }
 
 .cv-name {
@@ -157,7 +161,7 @@ h2 {
     padding: 1em;
 }
 .item-name {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     text-transform: uppercase;
     font-weight: 600;
 }
@@ -168,4 +172,9 @@ h2 {
 
 .item-title {
     font-weight: 500;
+    font-size: .9rem;
+}
+
+.item-duties {
+    font-size: .7rem;
 }
